@@ -1,0 +1,11 @@
+wget https://raw.githubusercontent.com/serverok/squid-proxy-installer/master/squid3-install.sh
+
+sudo bash squid3-install.sh
+
+sudo sed -i 's/^http_port.*$/http_port 10000/g'  /etc/squid/squid.conf
+
+sudo systemctl restart squid
+
+sudo squid-add-user
+
+sudo squid-uninstall
